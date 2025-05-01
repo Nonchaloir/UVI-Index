@@ -20,7 +20,7 @@ def main():
 
 
     # load the file
-    with open("main.html") as inf:
+    with open("index.html") as inf:
         txt = inf.read()
         soup = bs4.BeautifulSoup(txt, 'html.parser')
 
@@ -37,7 +37,7 @@ def main():
 
 
     # save the file again
-    with open("main.html", "w") as outf:
+    with open("index.html", "w") as outf:
         outf.write(str(soup))
 
 main()
