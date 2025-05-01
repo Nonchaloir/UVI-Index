@@ -2,7 +2,7 @@ name: Hourly Python Runner
 
 on:
   schedule:
-    - cron: '45 * * * *'  # Runs every hour on the hour (UTC)
+    - cron: '50 * * * *'  # Runs every hour on the hour (UTC)
   workflow_dispatch:      # Allows manual trigger from GitHub UI
 
 jobs:
