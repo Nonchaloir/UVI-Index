@@ -29,7 +29,7 @@ jobs:
     - name: Commit changes
       run: |
         git config user.name "Nonchaloir"
-        git config user.email "justinleowcs@gmail.com"
+        git config user.email "leow.justin.cs@gmail.com"
         git add index.html
         git commit -m "Auto-update index.html [CI skip]" || echo "No changes to commit"
         git push
