@@ -3,8 +3,11 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 import bs4
 import re
+import chromedriver_autoinstaller
 
 def main():
+
+    chromedriver_autoinstaller.install()
     op = webdriver.ChromeOptions()
     op.add_argument('headless')
     driver = webdriver.Chrome(options=op)
