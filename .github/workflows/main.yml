@@ -1,26 +1,35 @@
-name: run main.py
+name: Hourly Python Runner
 
 on:
   schedule:
-    - cron: '0 * * * *' # At 00:00 on Monday
+    - cron: '0 * * * *'  # Runs every hour on the hour (UTC)
+  workflow_dispatch:      # Allows manual trigger from GitHub UI
 
 jobs:
-  build:
+  run-script:
     runs-on: ubuntu-latest
+
     steps:
-      - name: checkout repo content
-        uses: actions/checkout@v2 # checkout the repository content
+    - name: Checkout repo
+      uses: actions/checkout@v3
 
-      - name: setup python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10' # install the python version needed
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
 
-      - name: install python packages
-        run: |
-          python -m pip install --upgrade pip
-          pip install selenium
-          pip install beautifulsoup4
+    - name: Install dependencies (if any)
+      run: |
+        pip install selenium
+        pip install beautifulsoup4
 
-      - name: execute py script # run main.py
-        run: python main.py
+    - name: Run the Python script
+      run: python main.py
+
+    - name: Commit changes
+      run: |
+        git config user.name "Nonchaloir"
+        git config user.email "justinleowcs@gmail.com"
+        git add index.html
+        git commit -m "Auto-update index.html [CI skip]" || echo "No changes to commit"
+        git push
