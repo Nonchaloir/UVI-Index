@@ -22,6 +22,7 @@ jobs:
       run: |
         pip install selenium
         pip install beautifulsoup4
+        pip install chromedriver-autoinstaller
 
     - name: Run the Python script
       run: python main.py
