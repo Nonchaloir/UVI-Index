@@ -39,3 +39,5 @@ def main():
     # save the file again
     with open("main.html", "w") as outf:
         outf.write(str(soup))
+
+main()
