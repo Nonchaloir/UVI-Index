@@ -28,6 +28,9 @@ def main():
     Lastest_time_Info = Lastest_time.text
     driver.quit()
 
+    if Lastest_hour_Info == "":
+        UVI_Info_Website =  "NA"
+
     print(UVI_Info_Website)
     print(f'{Lastest_time_Info} {Lastest_hour_Info}:')
 
