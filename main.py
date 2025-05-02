@@ -4,6 +4,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import bs4
 import chromedriver_autoinstaller
+import time
 
 def main():
     chromedriver_autoinstaller.install()
@@ -16,6 +17,7 @@ def main():
     driver.get("https://www.nea.gov.sg/corporate-functions/weather/ultraviolet-index")
 
     wait = WebDriverWait(driver, 20)  # wait up to 10 seconds
+    time.sleep(2)
 
     UVI = wait.until(EC.presence_of_element_located((By.XPATH, "//div[contains(@class, 'circle__container')]")))
     Lastest_hour = wait.until(EC.presence_of_element_located((By.XPATH, "//span[contains(@class, 'latest-hour')]")))
