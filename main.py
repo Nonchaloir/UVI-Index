@@ -15,7 +15,7 @@ def main():
     driver = webdriver.Chrome(options=options)
     driver.get("https://www.nea.gov.sg/corporate-functions/weather/ultraviolet-index")
 
-    wait = WebDriverWait(driver, 10)  # wait up to 10 seconds
+    wait = WebDriverWait(driver, 20)  # wait up to 10 seconds
 
     UVI = wait.until(EC.presence_of_element_located((By.XPATH, "//div[contains(@class, 'circle__container')]")))
     Lastest_hour = wait.until(EC.presence_of_element_located((By.XPATH, "//span[contains(@class, 'latest-hour')]")))
