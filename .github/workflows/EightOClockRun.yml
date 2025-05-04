@@ -2,7 +2,7 @@ name: 8am Schedule
 
 on:
   schedule:
-    - cron: '45 8 * * *'  # Runs every hour on the hour (UTC)
+    - cron: '45 12 * * *'  # Runs every hour on the hour (UTC)
   workflow_dispatch:      # Allows manual trigger from GitHub UI
 
 jobs:
